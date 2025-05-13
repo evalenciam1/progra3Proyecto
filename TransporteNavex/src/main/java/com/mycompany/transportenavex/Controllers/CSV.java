@@ -1,9 +1,13 @@
-package com.mycompany.transportenavex;
+package com.mycompany.transportenavex.Controllers;
 
 import java.io.*;
 import java.util.List;
 
-public class CSVHelper {
+import com.mycompany.transportenavex.Models.ListaDoblementeEnlazada;
+import com.mycompany.transportenavex.Models.Pasajero;
+import com.mycompany.transportenavex.Controllers.AccionesController;
+
+public class CSV {
 
     private static final int NumAsientos = 10;  
     private static final String Folder = System.getProperty("user.dir") + "\\data\\";  //  crea carpeta sin no existe dentro del mismo proyecto llamado data donde se guardan los csv
@@ -48,7 +52,7 @@ public class CSVHelper {
                 }
 
                 // Si el pasajero es válido, intentar agregarlo a la lista
-                if (!lista.agregar(pasajero)) {
+                if (agregarPasajero(lista,pasajero)=="PASAJERO AGREGADO CORRECTAMENTE") {
                     System.out.println("No se pudo agregar el pasajero: " + pasajero.getNombre());
                 }
             }
@@ -68,7 +72,7 @@ public class CSVHelper {
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(archivo))) {
             // Obtener todos los pasajeros y escribir cada uno en el archivo
-            List<Pasajero> pasajeros = lista.obtenerPasajeros();
+            List<Pasajero> pasajeros = lista.buscarPasajero();
             for (Pasajero p : pasajeros) {
                 String linea = String.format("%s,%s,%d", p.getNombre(), p.getDpi(), p.getNumeroAsiento());
                 bw.write(linea);

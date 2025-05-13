@@ -1,4 +1,4 @@
-package com.mycompany.transportenavex;
+package com.mycompany.transportenavex.Models;
 
 public class NodoPasajero {
     Pasajero pasajero;
