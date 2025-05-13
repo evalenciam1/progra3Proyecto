@@ -6,6 +6,10 @@ package com.mycompany.transportenavex;
 
 import java.util.Scanner;
 
+import com.mycompany.transportenavex.Frontend.VentanaPrincipal;
+import com.mycompany.transportenavex.Models.ListaDoblementeEnlazada;
+import com.mycompany.transportenavex.Models.Pasajero;
+
 /**
  *
  * @author Esteban Valencia
@@ -16,6 +20,9 @@ public class TransporteNavex {
         Scanner sc = new Scanner(System.in);
         int opcion;
 
+        new VentanaPrincipal();
+
+        
         do {
             System.out.println("\n--- MENU ---");
             System.out.println("1. Agregar pasajero");

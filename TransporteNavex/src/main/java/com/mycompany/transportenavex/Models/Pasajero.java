@@ -1,4 +1,4 @@
-package com.mycompany.transportenavex;
+package com.mycompany.transportenavex.Models;
 
 public class Pasajero {
     
@@ -37,7 +37,7 @@ public class Pasajero {
         this.numeroAsiento = numeroAsiento;
     }
 
-    @Override
+   /* @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Pasajero{");
@@ -47,5 +47,12 @@ public class Pasajero {
         sb.append('}');
         return sb.toString();
     }
+         */
+
+    @Override
+public String toString() {
+    return "DPI: " + dpi + ", Nombre: " + nombre + ", Asiento: " + numeroAsiento;
+}
+
 
 }

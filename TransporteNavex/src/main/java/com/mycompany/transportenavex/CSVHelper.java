@@ -3,6 +3,9 @@ package com.mycompany.transportenavex;
 import java.io.*;
 import java.util.List;
 
+import com.mycompany.transportenavex.Models.ListaDoblementeEnlazada;
+import com.mycompany.transportenavex.Models.Pasajero;
+
 public class CSVHelper {
 
     private static final int NumAsientos = 10;  
@@ -68,7 +71,7 @@ public class CSVHelper {
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(archivo))) {
             // Obtener todos los pasajeros y escribir cada uno en el archivo
-            List<Pasajero> pasajeros = lista.obtenerPasajeros();
+            List<Pasajero> pasajeros = lista.buscarPasajero();
             for (Pasajero p : pasajeros) {
                 String linea = String.format("%s,%s,%d", p.getNombre(), p.getDpi(), p.getNumeroAsiento());
                 bw.write(linea);

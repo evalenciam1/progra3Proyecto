@@ -1,4 +1,4 @@
-package com.mycompany.transportenavex;
+package com.mycompany.transportenavex.Models;
 
 public class ListaDoblementeEnlazada {
 
@@ -16,28 +16,9 @@ public class ListaDoblementeEnlazada {
         cola = null;
     }
 
-    public boolean agregar(Pasajero pasajero) {
+    public String agregar(Pasajero pasajero) {
 
-        String dpi = pasajero.getDpi().trim();
-        pasajero.setDpi(dpi);
-
-        if (!validacionDpi(pasajero.getDpi())) {
-            System.out.println("Dpi invalido");
-            return false;
-        }
-
-        if (buscaPasajero(pasajero.getDpi()) != null) {
-            System.out.println("Ya existe este pasajero");
-            return false;
-        }
-        if (asientosOcupados(pasajero.getNumeroAsiento())) {
-            System.out.println("Asiento ya ocupado");
-            return false;
-        }
-        if (cantidadPasajeros() >= cantidadMaximaPasajeros) {
-            System.out.println("La avioneta ya esta llena");
-            return false;
-        }
+        
         NodoPasajero nuevo = new NodoPasajero(pasajero);
         if (cabeza == null) {
             cabeza = cola = nuevo;
@@ -46,7 +27,7 @@ public class ListaDoblementeEnlazada {
             nuevo.anterior = cola;
             cola = nuevo;
         }
-        return true;
+        return "PASAJERO AGREGADO CORRECTAMENTE";
     }
 
     public int cantidadPasajeros() {
@@ -144,7 +125,7 @@ public class ListaDoblementeEnlazada {
         return false;
     }
 
-    private boolean asientosOcupados(int numeroAsiento) {
+    public boolean asientosOcupados(int numeroAsiento) {
         NodoPasajero actual = cabeza;
         while (actual != null) {
             if (actual.pasajero.getNumeroAsiento() == numeroAsiento) {
@@ -155,8 +136,17 @@ public class ListaDoblementeEnlazada {
         return false;
     }
 
-    private boolean validacionDpi(String dpi) {
-        return dpi != null && dpi.matches("\\d{13}");
+    public String obtenerTextoPasajeros() {
+        StringBuilder sb = new StringBuilder();
+        NodoPasajero actual = cabeza;
+        while (actual != null) {
+            sb.append(actual.pasajero).append("\n");
+            actual = actual.siguiente;
+        }
+        return sb.toString();
     }
+    
+
+    
 
 }
