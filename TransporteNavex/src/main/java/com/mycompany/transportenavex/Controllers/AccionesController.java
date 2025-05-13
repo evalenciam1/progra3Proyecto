@@ -20,7 +20,7 @@ public class AccionesController {
         if (lista.asientosOcupados(pasajero.getNumeroAsiento())) {
             return "ASIENTO OCUPADO";
         }
-        if (lista.cantidadPasajeros() >= 10) {
+        if (lista.cantidadPasajeros() == 10) {
             return "LA AVIONETA YA ESTA LLENA";
         }
 

@@ -19,10 +19,11 @@ public class VentanaAvioneta extends JFrame {
     private JTextField asientoField;
     private JTextArea listaTextArea;
 
-    public VentanaAvioneta(int numeroAvioneta, ListaDoblementeEnlazada listaPasajeros) {
-        this.numeroAvioneta = numeroAvioneta;
+    public VentanaAvioneta(int numeroavioneta, ListaDoblementeEnlazada listaPasajeros) {
+        this.numeroAvioneta = numeroavioneta;
         this.listaPasajeros = listaPasajeros;
 
+        //Configuracion del Jframe
         setTitle("Avioneta " + numeroAvioneta);
         setSize(500, 400);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

@@ -9,20 +9,20 @@ import com.mycompany.transportenavex.Models.ListaDoblementeEnlazada;
 
 public class VentanaPrincipal extends JFrame {
     public VentanaPrincipal() {
-        setTitle("Seleccionar Avioneta");
         
+        setTitle("Seleccionar Avioneta");
         setSize(700, 300);
         setBackground(Color.WHITE);
         setForeground(getBackground());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        //Creacion de listas, una por cada avioneta
+        //Instanciamos las listas, una por cada avioneta
         ListaDoblementeEnlazada avioneta1 = new ListaDoblementeEnlazada();
         ListaDoblementeEnlazada avioneta2 = new ListaDoblementeEnlazada();  
         ListaDoblementeEnlazada avioneta3 = new ListaDoblementeEnlazada();
 
-        //Instanciar los elementos de UI
+        //Creamos los elementos de UI
         JPanel panel = new JPanel();
         JLabel imagen = new JLabel();
         JButton boton1 = new JButton("Avioneta 1");
@@ -37,6 +37,7 @@ public class VentanaPrincipal extends JFrame {
         boton1.addActionListener(e -> abrirVentanaAvioneta(1,avioneta1));
         boton2.addActionListener(e -> abrirVentanaAvioneta(2, avioneta2));
         boton3.addActionListener(e -> abrirVentanaAvioneta(3, avioneta3));
+        
 
         //Agregar al panel cada elemento
         panel.add(imagen);

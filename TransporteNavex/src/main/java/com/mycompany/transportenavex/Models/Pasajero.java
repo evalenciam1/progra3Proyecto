@@ -37,17 +37,6 @@ public class Pasajero {
         this.numeroAsiento = numeroAsiento;
     }
 
-   /* @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Pasajero{");
-        sb.append("dpi=").append(dpi);
-        sb.append(", nombre=").append(nombre);
-        sb.append(", numeroAsiento=").append(numeroAsiento);
-        sb.append('}');
-        return sb.toString();
-    }
-         */
 
     @Override
 public String toString() {
