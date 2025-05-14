@@ -1,10 +1,16 @@
 package com.mycompany.transportenavex.Frontend;
 
-import javax.swing.*;
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
-import com.mycompany.transportenavex.Controllers.AccionesController;
 import com.mycompany.transportenavex.Models.ListaDoblementeEnlazada;
-import com.mycompany.transportenavex.Models.Pasajero;
 
 //import java.awt.*;
 //import java.awt.event.*;
@@ -42,6 +48,12 @@ public class VentanaAvioneta extends JFrame {
         agregarButton.addActionListener(e -> ventanaAgregarPasajero());
         panel.add(agregarButton);
 
+        //Boton eliminar
+        JButton eliminarButton = new JButton("Eliminar Paserjo");
+        eliminarButton.addActionListener(e -> VentanaEliminarPAsajero());
+        panel.add(eliminarButton);
+
+
         panel.add(Box.createVerticalStrut(15));
 
         // Área para mostrar pasajeros
@@ -54,6 +66,10 @@ public class VentanaAvioneta extends JFrame {
         // Agregar panel
         add(panel);
         actualizarLista();
+    }
+
+    private void  VentanaEliminarPAsajero() {
+        new eliminarPasajero(numeroAvioneta, listaPasajeros);
     }
 
     private void ventanaAgregarPasajero() {
