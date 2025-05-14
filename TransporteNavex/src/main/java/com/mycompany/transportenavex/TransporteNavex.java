@@ -16,7 +16,7 @@ import com.mycompany.transportenavex.Models.Pasajero;
  */
 public class TransporteNavex {
     public static void main(String[] args) {
-        ListaDoblementeEnlazada lista = new ListaDoblementeEnlazada();
+        ListaDoblementeEnlazada lista = new ListaDoblementeEnlazada(0);
         Scanner sc = new Scanner(System.in);
         int opcion;
 

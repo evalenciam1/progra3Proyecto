@@ -5,15 +5,16 @@ public class ListaDoblementeEnlazada {
     private NodoPasajero cabeza;
     private NodoPasajero cola;
 
-    private final int cantidadMaximaPasajeros = 10;
+    private int cantidadMaximaPasajeros;
 
     public int cantidadMaximaPasajeros() {
         return cantidadMaximaPasajeros;
     }
 
-    public ListaDoblementeEnlazada() {
+    public ListaDoblementeEnlazada(int asientos) {
         cabeza = null;
         cola = null;
+        cantidadMaximaPasajeros=asientos;
     }
 
     public String agregar(Pasajero pasajero) {

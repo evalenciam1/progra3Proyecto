@@ -9,11 +9,12 @@ import com.mycompany.transportenavex.Controllers.AccionesController;
 
 public class CSV {
 
-    private static final int NumAsientos = 10;  
+     
     private static final String Folder = System.getProperty("user.dir") + "\\data\\";  //  crea carpeta sin no existe dentro del mismo proyecto llamado data donde se guardan los csv
 
     // carga los  pasajeros desde archivo CSV a la lista enlazada
     public static void cargarDesdeCSV(int avionetaId, ListaDoblementeEnlazada lista) throws IOException {
+        int NumAsientos = lista.cantidadMaximaPasajeros();
         String ruta = getRutaArchivo(avionetaId);
         File archivo = new File(ruta);
 
@@ -24,7 +25,9 @@ public class CSV {
 
         try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
             String linea;
-            while ((linea = br.readLine()) != null) {
+            int i=0;
+            while ((linea = br.readLine()) != null ||  i<=NumAsientos) {
+                i++;
                 String[] partes = linea.split(",");
                 if (partes.length != 3) {
                     System.out.println("Línea mal formada: " + linea);

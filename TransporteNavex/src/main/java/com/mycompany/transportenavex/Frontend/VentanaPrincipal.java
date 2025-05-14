@@ -17,10 +17,10 @@ public class VentanaPrincipal extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        //Instanciamos las listas, una por cada avioneta
-        ListaDoblementeEnlazada avioneta1 = new ListaDoblementeEnlazada();
-        ListaDoblementeEnlazada avioneta2 = new ListaDoblementeEnlazada();  
-        ListaDoblementeEnlazada avioneta3 = new ListaDoblementeEnlazada();
+        //Instanciamos las listas, una por cada avioneta, enviamos al constructor la cantidad de asientos que admite la avioneta
+        ListaDoblementeEnlazada avioneta1 = new ListaDoblementeEnlazada(10);
+        ListaDoblementeEnlazada avioneta2 = new ListaDoblementeEnlazada(10);  
+        ListaDoblementeEnlazada avioneta3 = new ListaDoblementeEnlazada(10);
 
         //Creamos los elementos de UI
         JPanel panel = new JPanel();
@@ -52,7 +52,7 @@ public class VentanaPrincipal extends JFrame {
     }
 
     private void abrirVentanaAvioneta(int numeroAvioneta ,ListaDoblementeEnlazada listaPasajeros) {
-        // Se puede pasar el número para que la otra ventana sepa cuál avioneta es
+        // Se pasa el número para que la otra ventana sepa cuál avioneta es
         new VentanaAvioneta(numeroAvioneta, listaPasajeros);
 
     }
