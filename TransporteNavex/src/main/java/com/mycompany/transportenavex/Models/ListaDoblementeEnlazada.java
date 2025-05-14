@@ -94,6 +94,7 @@ public class ListaDoblementeEnlazada {
         while (actual != null) {
             System.out.println(actual.pasajero);
             actual = actual.siguiente;
+            
         }
     }
 

@@ -16,20 +16,15 @@ import com.mycompany.transportenavex.Controllers.AccionesController;
 import com.mycompany.transportenavex.Models.ListaDoblementeEnlazada;
 import com.mycompany.transportenavex.Models.Pasajero;
 
-//import java.awt.*;
-//import java.awt.event.*;
 
 public class agregarPasajero extends JFrame {
     private int numeroAvioneta;
     private ListaDoblementeEnlazada listaPasajeros;
-    private JComboBox<Integer> asientoComboBox;
-
-
+    
     // Elementos visuales
     private JTextField dpiField;
     private JTextField nombreField;
-    private JTextField asientoField;
-    private JTextArea listaTextArea;
+    private JComboBox<Integer> asientoComboBox;
 
     public agregarPasajero(int numeroavioneta, ListaDoblementeEnlazada listaPasajeros) {
         this.numeroAvioneta = numeroavioneta;
