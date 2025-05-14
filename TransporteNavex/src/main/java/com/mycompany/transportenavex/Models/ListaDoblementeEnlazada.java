@@ -1,5 +1,8 @@
 package com.mycompany.transportenavex.Models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ListaDoblementeEnlazada {
 
     private NodoPasajero cabeza;
@@ -147,6 +150,15 @@ public class ListaDoblementeEnlazada {
         return sb.toString();
     }
     
+    public List<Pasajero> obtenerTodosPasjaeros(){
+        List<Pasajero> pasajeros = new ArrayList<>();
+        NodoPasajero actual = cabeza;
+        while(actual != null){
+            pasajeros.add(actual.pasajero);
+            actual= actual.siguiente;
+        }
+        return pasajeros;
+    }
 
     
 

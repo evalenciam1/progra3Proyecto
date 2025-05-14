@@ -1,11 +1,20 @@
 package com.mycompany.transportenavex.Frontend;
 
-import javax.swing.*;
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 import com.mycompany.transportenavex.Controllers.AccionesController;
 import com.mycompany.transportenavex.Models.ListaDoblementeEnlazada;
 import com.mycompany.transportenavex.Models.Pasajero;
-import com.mycompany.transportenavex.Frontend.VentanaAvioneta;
 
 //import java.awt.*;
 //import java.awt.event.*;
@@ -90,7 +99,7 @@ public class agregarPasajero extends JFrame {
         }
         dispose();
         new VentanaAvioneta(numeroAvioneta, listaPasajeros);
-        
+           dispose();
 
     }
 
