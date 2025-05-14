@@ -4,13 +4,17 @@
 
 package com.mycompany.transportenavex;
 
+import com.mycompany.transportenavex.Frontend.VentanaPrincipal;
+
 /**
  *
  * @author Esteban Valencia
  */
 public class TransporteNavex {
-
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+       
+        new VentanaPrincipal();     
+
     }
 }
+
