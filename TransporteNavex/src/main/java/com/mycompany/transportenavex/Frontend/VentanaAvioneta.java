@@ -49,10 +49,15 @@ public class VentanaAvioneta extends JFrame {
         panel.add(agregarButton);
 
         //Boton eliminar
-        JButton eliminarButton = new JButton("Eliminar Paserjo");
+        JButton eliminarButton = new JButton("Eliminar Pasajero");
         eliminarButton.addActionListener(e -> VentanaEliminarPAsajero());
         panel.add(eliminarButton);
 
+        //botton modificar
+        JButton modificarButton = new JButton("Modificar Pasajero");
+        modificarButton.addActionListener(e ->
+        ventanaModificarPasajero());
+        panel.add(modificarButton);
 
         panel.add(Box.createVerticalStrut(15));
 
@@ -70,11 +75,19 @@ public class VentanaAvioneta extends JFrame {
 
     private void  VentanaEliminarPAsajero() {
         new eliminarPasajero(numeroAvioneta, listaPasajeros);
+         dispose();
     }
 
     private void ventanaAgregarPasajero() {
          new agregarPasajero(numeroAvioneta, listaPasajeros);
+         dispose();
     }
+
+    private void ventanaModificarPasajero(){
+        new modificarPasajero(numeroAvioneta, listaPasajeros);
+         dispose();
+    }
+
 
     private void actualizarLista() {
         listaTextArea.setText(listaPasajeros.obtenerTextoPasajeros());
