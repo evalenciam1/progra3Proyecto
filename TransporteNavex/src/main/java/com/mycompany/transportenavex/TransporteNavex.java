@@ -5,7 +5,6 @@
 package com.mycompany.transportenavex;
 
 import com.mycompany.transportenavex.Frontend.VentanaPrincipal;
-import com.mycompany.transportenavex.Models.ListaDoblementeEnlazada;
 
 /**
  *
@@ -13,9 +12,7 @@ import com.mycompany.transportenavex.Models.ListaDoblementeEnlazada;
  */
 public class TransporteNavex {
     public static void main(String[] args) {
-        ListaDoblementeEnlazada lista = new ListaDoblementeEnlazada(0);
        
-
         new VentanaPrincipal();     
 
     }

@@ -6,6 +6,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -73,19 +74,31 @@ public class VentanaAvioneta extends JFrame {
         actualizarLista();
     }
 
-    private void  VentanaEliminarPAsajero() {
-        new eliminarPasajero(numeroAvioneta, listaPasajeros);
-         dispose();
-    }
-
     private void ventanaAgregarPasajero() {
          new agregarPasajero(numeroAvioneta, listaPasajeros);
          dispose();
     }
 
+    private void  VentanaEliminarPAsajero() {
+         int cantidadDePasajeros = listaPasajeros.cantidadPasajeros();
+        if (cantidadDePasajeros!=0) {
+           new eliminarPasajero(numeroAvioneta, listaPasajeros);
+            dispose();  
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Lista de pasajeros vacia");
+        }
+    }
+
     private void ventanaModificarPasajero(){
-        new modificarPasajero(numeroAvioneta, listaPasajeros);
-         dispose();
+        int cantidadDePasajeros = listaPasajeros.cantidadPasajeros();
+        if (cantidadDePasajeros!=0) {
+           new modificarPasajero(numeroAvioneta, listaPasajeros);
+            dispose();  
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Lista de pasajeros vacia");
+        }
     }
 
 
