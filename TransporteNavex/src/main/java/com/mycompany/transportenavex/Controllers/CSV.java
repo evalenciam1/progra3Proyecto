@@ -9,7 +9,7 @@ import com.mycompany.transportenavex.Controllers.AccionesController;
 
 public class CSV {
 
-     
+     /*
     private static final String Folder = System.getProperty("user.dir") + "\\data\\";  //  crea carpeta sin no existe dentro del mismo proyecto llamado data donde se guardan los csv
 
     // carga los  pasajeros desde archivo CSV a la lista enlazada
@@ -93,4 +93,6 @@ public class CSV {
     private static String getRutaArchivo(int avionetaId) {
         return Folder + "avioneta" + avionetaId + ".csv";
     }
+
+    */
 }
