@@ -21,8 +21,6 @@ public class ListaDoblementeEnlazada {
     }
 
     public String agregar(Pasajero pasajero) {
-
-        
         NodoPasajero nuevo = new NodoPasajero(pasajero);
         if (cabeza == null) {
             cabeza = cola = nuevo;
@@ -73,7 +71,6 @@ public class ListaDoblementeEnlazada {
             }
             actual = actual.siguiente;
         }
-
         return false;
     }
 
@@ -94,7 +91,7 @@ public class ListaDoblementeEnlazada {
         while (actual != null) {
             System.out.println(actual.pasajero);
             actual = actual.siguiente;
-            
+
         }
     }
 
@@ -150,7 +147,7 @@ public class ListaDoblementeEnlazada {
         }
         return sb.toString();
     }
-    
+
     public List<Pasajero> obtenerTodosPasjaeros(){
         List<Pasajero> pasajeros = new ArrayList<>();
         NodoPasajero actual = cabeza;
@@ -161,6 +158,6 @@ public class ListaDoblementeEnlazada {
         return pasajeros;
     }
 
-    
+
 
 }

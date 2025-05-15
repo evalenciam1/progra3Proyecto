@@ -18,7 +18,7 @@ public class TransporteNavex extends Application{
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/vista.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/avionetaDetalle.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
         stage.setTitle("Transporte Navex");

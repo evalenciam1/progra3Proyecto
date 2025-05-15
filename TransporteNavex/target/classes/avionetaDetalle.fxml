@@ -1,14 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.collections.FXCollections?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="AvionetaDetalle"
-            prefHeight="400.0" prefWidth="600.0">
+            fx:controller="com.mycompany.transportenavex.Frontend.AvionetaDetalle"
+            stylesheets="@styles.css"
+            prefHeight="600.0" prefWidth="1000.0"
+            styleClass="main">
+    <VBox AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          layoutY="20" alignment="CENTER" spacing="12">
+        <!-- Enlace para volver -->
+        <HBox alignment="CENTER_LEFT" spacing="2" styleClass="avioneta-detalle-back">
+            <Label text="←" styleClass="avioneta-detalle-back-icon"/>
+            <Hyperlink text="Volver a la lista de avionetas"/>
+        </HBox>
 
+        <!-- Contenedor principal -->
+        <HBox spacing="24" alignment="TOP_LEFT">
+            <ImageView fx:id="avionetaImage1"
+                       fitHeight="160"
+                       fitWidth="200"
+                       preserveRatio="true"
+                       styleClass="avioneta-detalle-imagen"/>
+
+            <VBox spacing="8">
+                <Label fx:id="nombreAvioneta" styleClass="avioneta-detalle-title"/>
+                <Label fx:id="capacidadAvioneta" styleClass="avioneta-detalle-subtitle"/>
+                <Label fx:id="descripcionAvioneta" wrapText="true"/>
+                <Label fx:id="pasajerosActuales" styleClass="avioneta-detalle-pasajeros"/>
+            </VBox>
+        </HBox>
+
+        <HBox spacing="20" alignment="CENTER_LEFT" VBox.vgrow="NEVER" styleClass="pasajeros-toolbar-container">
+
+            <!-- Campo de búsqueda -->
+            <HBox spacing="5" alignment="CENTER_LEFT" styleClass="busqueda-container">
+                <TextField fx:id="campoBusqueda" promptText="DPI del pasajero..." styleClass="busqueda-input" />
+            </HBox>
+            <Region fx:id="espaciador" HBox.hgrow="ALWAYS"/>
+            <!-- Controles laterales -->
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <!-- Dropdown de orden -->
+                <ComboBox fx:id="ordenComboBox" styleClass="orden-dropdown" promptText="⇅ Ordenar">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="↓ Hacia adelante"/>
+                            <String fx:value="↑ Hacia atrás"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+
+                <!-- Botón para agregar pasajero -->
+                <Button fx:id="agregarPasajeroBtn" text="+ Agregar Pasajero" styleClass="agregar-btn"/>
+            </HBox>
+        </HBox>
+
+        <VBox>
+
+            <TableView fx:id="tablePasajeros" prefWidth="988">
+                <columns>
+                    <TableColumn fx:id="colNombre" text="Nombre" prefWidth="400"/>
+                    <TableColumn fx:id="colDPI" text="DPI" prefWidth="200"/>
+                    <TableColumn fx:id="colAsiento" text="Asiento" prefWidth="100"/>
+                </columns>
+            </TableView>
+
+        </VBox>
+
+
+    </VBox>
 </AnchorPane>

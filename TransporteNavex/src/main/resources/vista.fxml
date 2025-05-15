@@ -16,8 +16,8 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.mycompany.transportenavex.Frontend.Vista"
             stylesheets="@styles.css"
-            prefHeight="600.0" prefWidth="1080.0"
-styleClass="main">
+            prefHeight="600.0" prefWidth="1000.0"
+            styleClass="main">
 
     <VBox AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
           layoutY="20" alignment="CENTER" spacing="12">
@@ -33,7 +33,7 @@ styleClass="main">
         <HBox spacing="20" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
             <!-- Card 1 -->
             <VBox styleClass="flota-card" prefWidth="300">
-                <HBox styleClass="flota-card-image" >
+                <HBox styleClass="flota-card-image">
                     <ImageView fx:id="avionetaImage1" fitWidth="300" preserveRatio="true"/>
                 </HBox>
                 <VBox spacing="12" styleClass="flota-card-content">
@@ -46,7 +46,7 @@ styleClass="main">
 
             <!-- Card 2 -->
             <VBox styleClass="flota-card" prefWidth="300">
-                <HBox styleClass="flota-card-image" >
+                <HBox styleClass="flota-card-image">
                     <ImageView fx:id="avionetaImage2" fitWidth="300" preserveRatio="true"/>
                 </HBox>
                 <VBox spacing="12" styleClass="flota-card-content">
@@ -59,7 +59,7 @@ styleClass="main">
 
             <!-- Card 3 -->
             <VBox styleClass="flota-card" prefWidth="300">
-                <HBox styleClass="flota-card-image" >
+                <HBox styleClass="flota-card-image">
                     <ImageView fx:id="avionetaImage3" fitWidth="300" preserveRatio="true"/>
                 </HBox>
                 <VBox spacing="12" styleClass="flota-card-content">
