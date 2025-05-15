@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.mycompany.transportenavex.Frontend.Vista"
+            stylesheets="@styles.css"
+            prefHeight="600.0" prefWidth="1080.0"
+styleClass="main">
+
+    <VBox AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          layoutY="20" alignment="CENTER" spacing="12">
+        <ImageView fx:id="logoImage" fitWidth="400" preserveRatio="true"/>
+        <Label text="Sistema de gestión de avionetas y pasajeros para vuelos ejecutivos"
+               styleClass="title-label"
+               alignment="CENTER"/>
+        <HBox>
+            <Label text="Nuestra flota"
+                   styleClass="flota-title-label"
+                   alignment="CENTER"/>
+        </HBox>
+        <HBox spacing="20" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+            <!-- Card 1 -->
+            <VBox styleClass="flota-card" prefWidth="300">
+                <HBox styleClass="flota-card-image" >
+                    <ImageView fx:id="avionetaImage1" fitWidth="300" preserveRatio="true"/>
+                </HBox>
+                <VBox spacing="12" styleClass="flota-card-content">
+                    <Label text="Avioneta Uno" styleClass="flota-card-title"/>
+                    <Label text="Capacidad: 10 pasajeros" styleClass="flota-card-subtitle"/>
+                    <Label wrapText="true" text="Avioneta ejecutiva con amplio espacio y comodidades."/>
+                    <Button text="Ver Detalles" styleClass="flota-card-button" maxWidth="Infinity"/>
+                </VBox>
+            </VBox>
+
+            <!-- Card 2 -->
+            <VBox styleClass="flota-card" prefWidth="300">
+                <HBox styleClass="flota-card-image" >
+                    <ImageView fx:id="avionetaImage2" fitWidth="300" preserveRatio="true"/>
+                </HBox>
+                <VBox spacing="12" styleClass="flota-card-content">
+                    <Label text="Avioneta Dos" styleClass="flota-card-title"/>
+                    <Label text="Capacidad: 10 pasajeros" styleClass="flota-card-subtitle"/>
+                    <Label wrapText="true" text="Avioneta ejecutiva con amplio espacio y comodidades."/>
+                    <Button text="Ver Detalles" styleClass="flota-card-button" maxWidth="Infinity"/>
+                </VBox>
+            </VBox>
+
+            <!-- Card 3 -->
+            <VBox styleClass="flota-card" prefWidth="300">
+                <HBox styleClass="flota-card-image" >
+                    <ImageView fx:id="avionetaImage3" fitWidth="300" preserveRatio="true"/>
+                </HBox>
+                <VBox spacing="12" styleClass="flota-card-content">
+                    <Label text="Avioneta Tres" styleClass="flota-card-title"/>
+                    <Label text="Capacidad: 10 pasajeros" styleClass="flota-card-subtitle"/>
+                    <Label wrapText="true" text="Avioneta ejecutiva con amplio espacio y comodidades."/>
+                    <Button text="Ver Detalles" styleClass="flota-card-button" maxWidth="Infinity"/>
+                </VBox>
+            </VBox>
+        </HBox>
+    </VBox>
+
+</AnchorPane>
+
