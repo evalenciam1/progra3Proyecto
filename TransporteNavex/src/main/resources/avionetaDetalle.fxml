@@ -56,7 +56,7 @@
                 </ComboBox>
 
                 <!-- Botón para agregar pasajero -->
-                <Button fx:id="agregarPasajeroBtn" text="+ Agregar Pasajero" styleClass="agregar-btn"/>
+                <Button fx:id="agregarPasajeroBtn" text="+ Agregar Pasajero" styleClass="agregar-btn" onAction="#abrirVentanaAgregarPasajero"/>
             </HBox>
         </HBox>
 
