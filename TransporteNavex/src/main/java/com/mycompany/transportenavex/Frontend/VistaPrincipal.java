@@ -1,4 +1,5 @@
 package com.mycompany.transportenavex.Frontend;
+import com.mycompany.transportenavex.TransporteNavex;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
@@ -7,7 +8,7 @@ import javafx.scene.image.ImageView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Vista implements Initializable {
+public class VistaPrincipal implements Initializable {
 
     @FXML
     private ImageView logoImage;
@@ -31,5 +32,17 @@ public class Vista implements Initializable {
         avionetaImage1.setImage(avioneta1);
         avionetaImage2.setImage(avioneta2);
         avionetaImage3.setImage(avioneta3);
+    }
+
+    public void detalleAvioneta1() {
+        TransporteNavex.mostrarAvionetaDetalle(1);
+    }
+
+    public void detalleAvioneta2() {
+        TransporteNavex.mostrarAvionetaDetalle(2);
+    }
+
+    public void detalleAvioneta3() {
+        TransporteNavex.mostrarAvionetaDetalle(3);
     }
 }

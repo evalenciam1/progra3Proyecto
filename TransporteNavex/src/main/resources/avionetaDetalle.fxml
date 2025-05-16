@@ -17,7 +17,7 @@
         <!-- Enlace para volver -->
         <HBox alignment="CENTER_LEFT" spacing="2" styleClass="avioneta-detalle-back">
             <Label text="←" styleClass="avioneta-detalle-back-icon"/>
-            <Hyperlink text="Volver a la lista de avionetas"/>
+            <Hyperlink text="Volver a la lista de avionetas" onAction="#mostrarVentanaPrincipal"/>
         </HBox>
 
         <!-- Contenedor principal -->
@@ -64,9 +64,10 @@
 
             <TableView fx:id="tablePasajeros" prefWidth="988">
                 <columns>
-                    <TableColumn fx:id="colNombre" text="Nombre" prefWidth="400"/>
+                    <TableColumn fx:id="colNombre" text="Nombre" prefWidth="500"/>
                     <TableColumn fx:id="colDPI" text="DPI" prefWidth="200"/>
                     <TableColumn fx:id="colAsiento" text="Asiento" prefWidth="100"/>
+                    <TableColumn fx:id="colAcciones" text="Acciones" prefWidth="160"/>
                 </columns>
             </TableView>
 

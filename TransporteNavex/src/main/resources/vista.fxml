@@ -14,7 +14,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.mycompany.transportenavex.Frontend.Vista"
+            fx:controller="com.mycompany.transportenavex.Frontend.VistaPrincipal"
             stylesheets="@styles.css"
             prefHeight="600.0" prefWidth="1000.0"
             styleClass="main">
@@ -40,7 +40,7 @@
                     <Label text="Avioneta Uno" styleClass="flota-card-title"/>
                     <Label text="Capacidad: 10 pasajeros" styleClass="flota-card-subtitle"/>
                     <Label wrapText="true" text="Avioneta ejecutiva con amplio espacio y comodidades."/>
-                    <Button text="Ver Detalles" styleClass="flota-card-button" maxWidth="Infinity"/>
+                    <Button text="Ver Detalles" styleClass="flota-card-button" maxWidth="Infinity" onAction="#detalleAvioneta1"/>
                 </VBox>
             </VBox>
 
@@ -53,7 +53,7 @@
                     <Label text="Avioneta Dos" styleClass="flota-card-title"/>
                     <Label text="Capacidad: 10 pasajeros" styleClass="flota-card-subtitle"/>
                     <Label wrapText="true" text="Avioneta ejecutiva con amplio espacio y comodidades."/>
-                    <Button text="Ver Detalles" styleClass="flota-card-button" maxWidth="Infinity"/>
+                    <Button text="Ver Detalles" styleClass="flota-card-button" maxWidth="Infinity" onAction="#detalleAvioneta2"/>
                 </VBox>
             </VBox>
 
@@ -66,7 +66,7 @@
                     <Label text="Avioneta Tres" styleClass="flota-card-title"/>
                     <Label text="Capacidad: 10 pasajeros" styleClass="flota-card-subtitle"/>
                     <Label wrapText="true" text="Avioneta ejecutiva con amplio espacio y comodidades."/>
-                    <Button text="Ver Detalles" styleClass="flota-card-button" maxWidth="Infinity"/>
+                    <Button text="Ver Detalles" styleClass="flota-card-button" maxWidth="Infinity" onAction="#detalleAvioneta3"/>
                 </VBox>
             </VBox>
         </HBox>

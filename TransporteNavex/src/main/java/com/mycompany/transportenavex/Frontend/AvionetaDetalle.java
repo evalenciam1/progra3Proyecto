@@ -1,6 +1,7 @@
 package com.mycompany.transportenavex.Frontend;
 
 import com.mycompany.transportenavex.Models.Pasajero;
+import com.mycompany.transportenavex.TransporteNavex;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -12,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -48,6 +50,7 @@ public class AvionetaDetalle implements Initializable {
     @FXML private TableColumn<Pasajero, String> colNombre;
     @FXML private TableColumn<Pasajero, String> colDPI;
     @FXML private TableColumn<Pasajero, Integer> colAsiento;
+    @FXML private TableColumn<Pasajero, Void> colAcciones;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -56,19 +59,23 @@ public class AvionetaDetalle implements Initializable {
         nombreAvioneta.setText("Avioneta 1");
         capacidadAvioneta.setText("Capacidad: 10 pasajeros");
         descripcionAvioneta.setText("Descripción: Avioneta de transporte de carga y pasajeros.");
-        pasajerosActuales.setText("Pasajeros actuales: 5");
+
 
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         colDPI.setCellValueFactory(new PropertyValueFactory<>("dpi"));
         colAsiento.setCellValueFactory(new PropertyValueFactory<>("numeroAsiento"));
-
+        agregarColumnaAcciones();
         ObservableList<Pasajero> pasajeros = FXCollections.observableArrayList(
                 new Pasajero("1234567890101", "Carlos López", 1),
                 new Pasajero( "1234567890102", "María Pérez", 2),
                 new Pasajero("1234567890103", "Juan García", 3)
         );
-
+        pasajerosActuales.setText("Pasajeros actuales: " + pasajeros.size());
         tablePasajeros.setItems(pasajeros);
+    }
+
+    public void inicializar(int numeroAvioneta) {
+        System.out.println("Inicializando avioneta: " + numeroAvioneta);
     }
 
     @FXML
@@ -86,6 +93,45 @@ public class AvionetaDetalle implements Initializable {
         modalStage.setTitle("Agregar Pasajero");
         modalStage.setScene(scene);
         modalStage.showAndWait(); // Espera a que se cierre la ventana
+    }
+
+    private void agregarColumnaAcciones() {
+        colAcciones.setCellFactory(col -> new TableCell<>() {
+            private final Button btnEditar = new Button("Editar");
+            private final Button btnEliminar = new Button("Eliminar");
+            private final HBox contenedor = new HBox(10, btnEditar, btnEliminar);
+
+            {
+                btnEditar.getStyleClass().add("editar-btn");
+                btnEliminar.getStyleClass().add("eliminar-btn");
+
+                btnEditar.setOnAction(e -> {
+                    Pasajero pasajero = getTableView().getItems().get(getIndex());
+                    // Acción editar
+                    System.out.println("Editar: " + pasajero.getNombre());
+                });
+
+                btnEliminar.setOnAction(e -> {
+                    Pasajero pasajero = getTableView().getItems().get(getIndex());
+                    // Acción eliminar
+                    System.out.println("Eliminar: " + pasajero.getNombre());
+                });
+            }
+
+            @Override
+            protected void updateItem(Void item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty) {
+                    setGraphic(null);
+                } else {
+                    setGraphic(contenedor);
+                }
+            }
+        });
+    }
+
+    public void mostrarVentanaPrincipal() {
+        TransporteNavex.mostrarVentanaPrincipal();
     }
 
 }
