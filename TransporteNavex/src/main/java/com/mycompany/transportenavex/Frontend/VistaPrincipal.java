@@ -1,4 +1,5 @@
 package com.mycompany.transportenavex.Frontend;
+import com.mycompany.transportenavex.Models.ListaDoblementeEnlazada;
 import com.mycompany.transportenavex.TransporteNavex;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -9,6 +10,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class VistaPrincipal implements Initializable {
+
+    ListaDoblementeEnlazada listaAvioneta1;
+    ListaDoblementeEnlazada listaAvioneta2;
+    ListaDoblementeEnlazada listaAvioneta3;
 
     @FXML
     private ImageView logoImage;
@@ -34,15 +39,27 @@ public class VistaPrincipal implements Initializable {
         avionetaImage3.setImage(avioneta3);
     }
 
+    public void setListaAvioneta1(ListaDoblementeEnlazada listaAvioneta1) {
+        this.listaAvioneta1 = listaAvioneta1;
+    }
+
+    public void setListaAvioneta2(ListaDoblementeEnlazada listaAvioneta2) {
+        this.listaAvioneta2 = listaAvioneta2;
+    }
+
+    public void setListaAvioneta3(ListaDoblementeEnlazada listaAvioneta3) {
+        this.listaAvioneta3 = listaAvioneta3;
+    }
+
     public void detalleAvioneta1() {
-        TransporteNavex.mostrarAvionetaDetalle(1);
+        TransporteNavex.mostrarAvionetaDetalle(1, this.listaAvioneta1);
     }
 
     public void detalleAvioneta2() {
-        TransporteNavex.mostrarAvionetaDetalle(2);
+        TransporteNavex.mostrarAvionetaDetalle(2, this.listaAvioneta2);
     }
 
     public void detalleAvioneta3() {
-        TransporteNavex.mostrarAvionetaDetalle(3);
+        TransporteNavex.mostrarAvionetaDetalle(3, this.listaAvioneta3);
     }
 }

@@ -10,10 +10,9 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AgregarPasajero implements Initializable {
-
-    Pasajero pasajeroCreado;
-
+public class EditarPasajero implements Initializable {
+    Pasajero pasajero;
+    Pasajero nuevoPasajero;
     @FXML
     private TextField nombreField;
 
@@ -25,20 +24,28 @@ public class AgregarPasajero implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        if(this.pasajero != null){
+            cargarPasajero();
+        }
+    }
 
+    public void cargarPasajero(){
+        nombreField.setText(this.pasajero.getNombre());
+        dpiField.setText(this.pasajero.getDpi());
+        asientoCombo.getSelectionModel().select((this.pasajero.getNumeroAsiento() - 1));
     }
 
     @FXML
-    private void agregarPasajero() {
-        String nombre = nombreField.getText();
-        String dpi = dpiField.getText();
-        int asiento = Integer.parseInt(asientoCombo.getValue().toString());
-
-        Pasajero nuevoPasajero = new Pasajero(dpi, nombre, asiento);
-        pasajeroCreado = nuevoPasajero;
+    public void guardarPasajero(){
+        this.nuevoPasajero = new Pasajero(dpiField.getText(), nombreField.getText(), Integer.parseInt(asientoCombo.getValue().toString()));
 
         Stage stage = (Stage) nombreField.getScene().getWindow();
         stage.close();
+    }
+
+    public void setPasajero(Pasajero pasajero) {
+        this.pasajero = pasajero;
+        cargarPasajero();
     }
 
     @FXML
@@ -47,7 +54,7 @@ public class AgregarPasajero implements Initializable {
         stage.close();
     }
 
-    public Pasajero getPasajeroCreado() {
-        return pasajeroCreado;
+    public Pasajero getNuevoPasajero() {
+        return nuevoPasajero;
     }
 }

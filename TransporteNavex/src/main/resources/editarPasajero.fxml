@@ -9,7 +9,7 @@
 <?import javafx.collections.FXCollections?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.mycompany.transportenavex.Frontend.AgregarPasajero"
+            fx:controller="com.mycompany.transportenavex.Frontend.EditarPasajero"
             prefWidth="425" prefHeight="400">
     <VBox spacing="12" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10"
           AnchorPane.bottomAnchor="10">
@@ -28,8 +28,8 @@
 
             <VBox spacing="4">
                 <Label text="DPI"/>
-                <TextField fx:id="dpiField" styleClass="busqueda-input"/>
-                <Label fx:id="dpiError" styleClass="error-label"/>
+                <TextField fx:id="dpiField" styleClass="busqueda-input" disable="true"/>
+                <Label fx:id="dpiError" styleClass="error-label" />
             </VBox>
 
             <VBox spacing="4">
@@ -56,7 +56,7 @@
 
         <HBox spacing="8" alignment="center_right">
             <Button text="Cancelar" styleClass="cancelar-btn" onAction="#cerrarVentana"/>
-            <Button text="Guardar"  styleClass="guardar-btn" onAction="#agregarPasajero"/>
+            <Button text="Guardar"  styleClass="guardar-btn" onAction="#guardarPasajero"/>
         </HBox>
 
     </VBox>

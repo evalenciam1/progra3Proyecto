@@ -40,13 +40,15 @@
 
             <!-- Campo de búsqueda -->
             <HBox spacing="5" alignment="CENTER_LEFT" styleClass="busqueda-container">
-                <TextField fx:id="campoBusqueda" promptText="DPI del pasajero..." styleClass="busqueda-input" />
+                <TextField fx:id="campoBusqueda" promptText="DPI del pasajero..." styleClass="busqueda-input" onAction="#filtrar"/>
             </HBox>
             <Region fx:id="espaciador" HBox.hgrow="ALWAYS"/>
             <!-- Controles laterales -->
             <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button fx:id="cargarCSV" text="Cargar CSV" styleClass="agregar-btn" onAction="#cargarCSV"/>
+                <Button fx:id="guardarCSV" text="Guardar CSV" styleClass="agregar-btn" onAction="#guardarCSV"/>
                 <!-- Dropdown de orden -->
-                <ComboBox fx:id="ordenComboBox" styleClass="orden-dropdown" promptText="⇅ Ordenar">
+                <ComboBox fx:id="ordenComboBox" styleClass="orden-dropdown" promptText="⇅ Ordenar" onAction="#reordenarLista">
                     <items>
                         <FXCollections fx:factory="observableArrayList">
                             <String fx:value="↓ Hacia adelante"/>
