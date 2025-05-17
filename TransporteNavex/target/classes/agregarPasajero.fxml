@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.mycompany.transportenavex.Frontend.AgregarPasajero"
+            prefWidth="425" prefHeight="400">
+    <VBox spacing="12" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10"
+          AnchorPane.bottomAnchor="10">
+
+        <VBox spacing="4">
+            <Label text="Agregar Pasajero" styleClass="dialog-title"/>
+            <Label fx:id="descripcionLabel" styleClass="dialog-description"/>
+        </VBox>
+
+        <VBox spacing="8">
+            <VBox spacing="4">
+                <Label text="Nombre completo"/>
+                <TextField fx:id="nombreField" styleClass="busqueda-input"/>
+                <Label fx:id="nombreError" styleClass="error-label"/>
+            </VBox>
+
+            <VBox spacing="4">
+                <Label text="DPI"/>
+                <TextField fx:id="dpiField" styleClass="busqueda-input"/>
+                <Label fx:id="dpiError" styleClass="error-label"/>
+            </VBox>
+
+            <VBox spacing="4">
+                <Label text="Asiento (1-10)"/>
+                <ComboBox fx:id="asientoCombo" promptText="Seleccionar asiento" styleClass="asientos-dropdown">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="1"/>
+                            <String fx:value="2"/>
+                            <String fx:value="3"/>
+                            <String fx:value="4"/>
+                            <String fx:value="5"/>
+                            <String fx:value="6"/>
+                            <String fx:value="7"/>
+                            <String fx:value="8"/>
+                            <String fx:value="9"/>
+                            <String fx:value="10"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+                <Label fx:id="asientoError" styleClass="error-label"/>
+            </VBox>
+        </VBox>
+
+        <HBox spacing="8" alignment="center_right">
+            <Button text="Cancelar" styleClass="cancelar-btn" onAction="#cerrarVentana"/>
+            <Button text="Guardar"  styleClass="guardar-btn" onAction="#agregarPasajero"/>
+        </HBox>
+
+    </VBox>
+</AnchorPane>

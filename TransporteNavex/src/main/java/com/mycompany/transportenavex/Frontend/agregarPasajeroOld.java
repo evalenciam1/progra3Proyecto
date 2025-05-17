@@ -9,7 +9,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import com.mycompany.transportenavex.Controllers.AccionesController;
@@ -17,7 +16,7 @@ import com.mycompany.transportenavex.Models.ListaDoblementeEnlazada;
 import com.mycompany.transportenavex.Models.Pasajero;
 
 
-public class agregarPasajero extends JFrame {
+public class agregarPasajeroOld extends JFrame {
     private int numeroAvioneta;
     private ListaDoblementeEnlazada listaPasajeros;
     
@@ -26,7 +25,7 @@ public class agregarPasajero extends JFrame {
     private JTextField nombreField;
     private JComboBox<Integer> asientoComboBox;
 
-    public agregarPasajero(int numeroavioneta, ListaDoblementeEnlazada listaPasajeros) {
+    public agregarPasajeroOld(int numeroavioneta, ListaDoblementeEnlazada listaPasajeros) {
         this.numeroAvioneta = numeroavioneta;
         this.listaPasajeros = listaPasajeros;
 

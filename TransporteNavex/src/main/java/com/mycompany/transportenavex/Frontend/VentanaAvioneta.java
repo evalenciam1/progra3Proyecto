@@ -120,7 +120,7 @@ public class VentanaAvioneta extends JFrame {
     }
 
     private void ventanaAgregarPasajero() {
-         new agregarPasajero(numeroAvioneta, listaPasajeros);
+         new agregarPasajeroOld(numeroAvioneta, listaPasajeros);
          dispose();
     }
 
